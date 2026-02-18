@@ -176,11 +176,11 @@ export default function UploadPage() {
         });
       }, 500);
 
-      const response = await fetch(`http://localhost:8000/api/v1${API_ROUTES.UPLOAD_VIDEO}`, {
-        method: "POST",
-        credentials: "include",
-        body: formData,
-      });
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${API_ROUTES.UPLOAD_VIDEO}`, {
+    method: "POST",
+    credentials: "include",
+    body: formData,
+    });
 
       if (progressInterval) clearInterval(progressInterval);
 
