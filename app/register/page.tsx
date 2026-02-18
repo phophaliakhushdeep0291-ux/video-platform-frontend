@@ -66,6 +66,10 @@ export default function RegisterPage() {
       toast.error("Password must be at least 6 characters");
       return;
     }
+    if (!avatar) {
+    toast.error("Please upload a profile picture");
+    return;
+  }
     setIsLoading(true);
     try {
       const data = new FormData();
